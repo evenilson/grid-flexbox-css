@@ -51,15 +51,16 @@ body{
     margin-top: 10px;
 }
 
-.article h1{
+.article > h1{
     text-align: center;
     font-size: 2rem;
 }
 
-.center{
+.section{
     margin: 0 auto;
     max-width: 800px;
 }
+
 
 /* CSS FLEXBOX 1*/
 
@@ -71,8 +72,18 @@ body{
 
 .flex > div{
     flex: 1 1 200px;
-    margin: 10px;
+    margin-bottom: 10px;
 }
+
+/*testando o nth:child*/
+.flex > div:nth-child(2){
+    margin: 0 20px;
+}
+
+.flex > div:nth-child(5){
+    margin: 0 20px;
+}
+
 
 /* CSS GRID 1*/
 
