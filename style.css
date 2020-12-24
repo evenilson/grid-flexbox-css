@@ -12,13 +12,20 @@ img{
     display: block;
 }
 
+body{
+    margin-bottom: 100px;
+    background: linear-gradient(to bottom, rgb(195, 20, 50), rgb(36, 11, 54));
+
+    color: white;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 
-    background-color: #008080;
+    
 
     padding: 20px;
 }
@@ -49,17 +56,61 @@ img{
     font-size: 2rem;
 }
 
+.center{
+    margin: 0 auto;
+    max-width: 800px;
+}
+
 /* CSS FLEXBOX 1*/
 
 .flex{
     display: flex;
-    flex-wrap: wrap;
-
-    max-width: 800px;
-    margin: 0 auto;
+    flex-wrap: wrap; 
+    
 }
 
 .flex > div{
     flex: 1 1 200px;
     margin: 10px;
+}
+
+/* CSS GRID 1*/
+
+.grid1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+}
+
+/*seleciona apartir da 4ª div*/
+.grid1 > div:nth-child(n + 4){
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+
+    align-items: center;
+
+}
+
+.grid1 > div:nth-child(10){
+    grid-row: 2 / 5;
+    grid-column: 1;
+
+    display: block;
+}
+
+@media (max-width: 600px){
+    .grid1{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid1 > div:nth-child(n + 4){
+        display: block;
+    }
+    .grid1 > div:nth-child(10){
+        grid-row: auto;
+        grid-column: auto;
+        order: -1;
+    }
+
 }
